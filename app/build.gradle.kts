@@ -11,7 +11,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.notesapp"
+        applicationId = "com.rkt.penote"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
