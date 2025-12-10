@@ -32,6 +32,13 @@ private val LightColorScheme = lightColorScheme(
     onSurface = DarkGray
 )
 
+/**
+ * Main Theme for the PeNote application.
+ *
+ * @param darkTheme Whether to use dark theme.
+ * @param dynamicColor Whether to use dynamic colors (Android 12+).
+ * @param content The content to display.
+ */
 @Composable
 fun PeNoteTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

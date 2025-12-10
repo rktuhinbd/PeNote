@@ -33,6 +33,13 @@ import com.rkt.penote.presentation.ui.theme.NoteColors
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+/**
+ * Screen for adding a new note or editing an existing one.
+ *
+ * @param navController Controller for navigation.
+ * @param noteColor The initial color of the note (passed via navigation arguments).
+ * @param viewModel ViewModel for managing UI state.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddEditNoteScreen(

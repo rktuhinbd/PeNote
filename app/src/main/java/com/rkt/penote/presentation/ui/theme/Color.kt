@@ -11,4 +11,7 @@ val BabyBlue = Color(0xff81deea)
 val Violet = Color(0xffcf94da)
 val LightGreen = Color(0xffe7ed9b)
 
+/**
+ * List of available note background colors.
+ */
 val NoteColors = listOf(RedOrange, LightBlue, Violet, BabyBlue, RedPink, LightGreen)

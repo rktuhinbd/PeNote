@@ -6,6 +6,9 @@ import androidx.room.TypeConverters
 import com.rkt.penote.data.dao.NoteDao
 import com.rkt.penote.data.entity.NoteEntity
 
+/**
+ * The Room Database that contains the Note table.
+ */
 @Database(
     entities = [NoteEntity::class],
     version = 1

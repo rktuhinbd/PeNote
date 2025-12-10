@@ -24,6 +24,15 @@ import androidx.core.graphics.ColorUtils
 import com.rkt.penote.domain.entity.Note
 import com.rkt.penote.domain.entity.NoteType
 
+/**
+ * Composable representing a single note item in the list.
+ *
+ * @param note The note to display.
+ * @param modifier Modifier to be applied to the layout.
+ * @param cornerRadius The radius of the note corners.
+ * @param cutCornerSize The size of the folded corner effect.
+ * @param onDeleteClick Callback when the delete button is clicked.
+ */
 @Composable
 fun NoteItem(
     note: Note,

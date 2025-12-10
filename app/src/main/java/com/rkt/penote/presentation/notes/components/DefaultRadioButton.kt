@@ -12,6 +12,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Custom Radio Button with text label.
+ *
+ * @param text The label text.
+ * @param selected Whether the button is selected.
+ * @param onSelect Callback when clicked.
+ */
 @Composable
 fun DefaultRadioButton(
     text: String,

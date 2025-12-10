@@ -11,6 +11,18 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 
+/**
+ * A custom TextField with a transparent background and a hint.
+ *
+ * @param text The current text value.
+ * @param hint The hint to display when text is empty.
+ * @param modifier Modifier to trigger layout changes.
+ * @param isHintVisible Whether the hint should be visible.
+ * @param onValueChange Callback when text changes.
+ * @param textStyle Style of the text.
+ * @param singleLine Whether the text field is single line.
+ * @param onFocusChange Callback when focus state changes.
+ */
 @Composable
 fun TransparentHintTextField(
     text: String,

@@ -6,6 +6,9 @@ import com.rkt.penote.domain.entity.CheckListItem
 import com.rkt.penote.domain.entity.Note
 import com.rkt.penote.domain.entity.NoteType
 
+/**
+ * Room Entity representing a Note in the database.
+ */
 @Entity(tableName = "note")
 data class NoteEntity(
     @PrimaryKey(autoGenerate = true) val id: Int? = null,
@@ -16,6 +19,9 @@ data class NoteEntity(
     val type: NoteType,
     val checkList: List<CheckListItem> = emptyList()
 ) {
+    /**
+     * Mapper function to convert [NoteEntity] to domain [Note].
+     */
     fun toNote(): Note {
         return Note(
             id = id,
@@ -29,6 +35,9 @@ data class NoteEntity(
     }
 }
 
+/**
+ * Mapper extension function to convert domain [Note] to [NoteEntity].
+ */
 fun Note.toNoteEntity(): NoteEntity {
     return NoteEntity(
         id = id,

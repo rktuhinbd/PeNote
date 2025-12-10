@@ -7,6 +7,12 @@ import androidx.compose.ui.unit.dp
 import com.rkt.penote.presentation.notes.NoteOrder
 import com.rkt.penote.presentation.notes.OrderType
 
+/**
+ * Section for selecting note order and type.
+ *
+ * @param noteOrder Current sort order.
+ * @param onOrderChange Callback when order is changed.
+ */
 @Composable
 fun OrderSection(
     modifier: Modifier = Modifier,

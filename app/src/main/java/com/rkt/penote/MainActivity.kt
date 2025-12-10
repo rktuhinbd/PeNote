@@ -15,6 +15,10 @@ import com.rkt.penote.presentation.ui.theme.PeNoteTheme
 import com.rkt.penote.presentation.util.Screen
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * The Main Entry point of the application.
+ * Sets up the Navigation Host and Theme.
+ */
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

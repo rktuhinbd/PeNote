@@ -22,6 +22,12 @@ import com.rkt.penote.presentation.notes.components.OrderSection
 import com.rkt.penote.presentation.util.Screen
 import kotlinx.coroutines.launch
 
+/**
+ * Screen displaying the list of notes with filtering options.
+ *
+ * @param navController Controller for navigation between screens.
+ * @param viewModel ViewModel for managing UI state.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NotesScreen(
@@ -109,7 +115,8 @@ fun NotesScreen(
                             scope.launch {
                                 val result = snackbarHostState.showSnackbar(
                                     message = "Note deleted",
-                                    actionLabel = "Undo"
+                                    actionLabel = "Undo",
+                                    duration = SnackbarDuration.Short
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
                                     viewModel.onEvent(NotesEvent.RestoreNote)
