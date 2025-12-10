@@ -1,21 +1,40 @@
 # Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# By default, the flags in this file are appended to flags specified
+# in C:\Users\rktuh\AppData\Local\Android\Sdk/tools/proguard/proguard-android-optimize.txt
+# You can edit the include path and order by changing the proguardFiles
+# directive in build.gradle.
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Room
+-keep class androidx.room.RoomDatabase { *; }
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.room.paging.**
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Hilt
+-keep class com.rkt.penote.PeNoteApp
+-keep class dagger.hilt.internal.aggregatedroot.codegen.AggregatedRootPackage
+-keep @dagger.hilt.EntryPoint class *
+-keep @dagger.hilt.InstallIn class *
+-keep @dagger.hilt.DefineComponent class *
+-keepclasseswithmembers class * {
+    @dagger.hilt.android.AndroidEntryPoint <init>(...);
+}
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Coroutines
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keepnames class kotlinx.coroutines.android.AndroidExceptionPreHandler {}
+-keepnames class kotlinx.coroutines.android.AndroidDispatcherFactory {}
+
+# Serialization
+-keepclassmembers class * {
+    @kotlinx.serialization.Serializable <init>(...);
+}
+-keepattributes Signature
+-keepattributes *Annotation*
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+
+# Compose
+-keep class androidx.compose.ui.tooling.preview.PreviewActivity { *; }
+-keep class androidx.compose.runtime.** { *; }
+-keep class androidx.compose.ui.** { *; }

@@ -28,6 +28,9 @@ class NoteViewModel @Inject constructor(
         getNotes(NoteOrder.Date(OrderType.Descending))
     }
 
+    /**
+     * Handles UI events triggered from the Notes Screen.
+     */
     fun onEvent(event: NotesEvent) {
         when (event) {
             is NotesEvent.Order -> {
@@ -60,10 +63,10 @@ class NoteViewModel @Inject constructor(
 
     private fun getNotes(noteOrder: NoteOrder) {
         getNotesJob?.cancel()
-        getNotesJob = noteUseCases.getNotes()
+        getNotesJob = noteUseCases.getNotes(noteOrder)
             .onEach { notes ->
                 _state.value = state.value.copy(
-                    notes = notes, // Sorting logic can be added here or in UseCase
+                    notes = notes,
                     noteOrder = noteOrder
                 )
             }
